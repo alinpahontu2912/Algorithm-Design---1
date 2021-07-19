@@ -1,0 +1,47 @@
+-------------------------------------------------------------------------------
+Task 1:------------------------------------------------------------------------
+
+	To solve this task, I adopted a greedy strategy. I sort the computers based
+on their initial coins gain. Then, I try to maximize the minimum of the 
+computers list by always upgrading the computers that generate the minimum 
+amount of coins per hour.
+	The worst case complexity of this task: O(B * N)  
+
+
+Task 2:------------------------------------------------------------------------
+	Solving this task requires dynammic programming concepts. At any given 
+moment, the result depends on the share to be analyzed, the budget and the
+maximum loss. This means the complexity of solving this problem is O(N*B*L).
+
+Task 3:------------------------------------------------------------------------
+	To solve this task, I used a greedy approach. To find the minimum cost to
+achieve the wanted array, the position of the minimum from the list must always
+be the pivot. This means, after finding the position of the minimum, the 
+minimum cost will be calculated only by adjusting the prefix and the suffix of
+the array so that each of them is descending and ascending resectively. 
+	One important case is when the minimum is either the first or last element
+of the array. The cheapest way to get the minimum cost is to switch the 
+position of the minimum by one (moving it to either the second position, or
+the penultimate one, by decreasing the neighbouring element)
+	The complexity of this problem is O(N)
+
+Task 4:------------------------------------------------------------------------
+	Task 4 requires dynamic programming concepts as well. Another observation
+is : The amount of maximum adjustments I can make to a a mountain is two. This
+is why I am using three dp arrays of size  N (where N is the number
+of mountains). I check for every existing mountain, if I can resize it, (by 
+decreasing its size with 0, 1 or 2), while also checking if the height does not
+go below 0, and then take the cost of the minimum adjustment.
+	The complexity of this program is O(N).
+
+Bonus Task:---------------------------------------------------------------------
+	To solve this task, I frst had to find the reccurence. Because I notice it
+changes into three distinct reccurences depending on the number I have, I constructed
+3 matrixes that can take me from one state to another. Depending on the remainder 
+of the division by three, I can calculate the final result. I am using matrixes to
+improve efficiency, because a regular dynamic programming approach with a simple
+vector would have been to slow and use up to much memory.
+	The complexity of this task: O(logN).
+
+References:
+https://www.geeksforgeeks.org/minimize-the-cost-to-make-all-the-adjacent-elements-distinct-in-an-array/
